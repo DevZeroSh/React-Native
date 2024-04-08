@@ -1,14 +1,17 @@
 import React from 'react';
 import PlatformTouchable from '../PlatformTouchable';
-import { Text } from 'react-native';
+import { ActivityIndicator, Text } from 'react-native';
 import styles from "./styles";
 
-const AppButton = ({title}) => {
-  return (
-    <PlatformTouchable style={styles.wrapper}>
-      <Text style={styles.title}>{title}</Text>
-    </PlatformTouchable>
-  );
+const AppButton = ({ title, onPress,isLoading }) => {
+    return (
+        <PlatformTouchable style={styles.wrapper} disabled={isLoading} onPress={onPress}>
+            {
+                isLoading ? <ActivityIndicator /> :
+                    <Text style={styles.title}>{title}</Text>
+            }
+        </PlatformTouchable>
+    );
 };
 
 export default AppButton;

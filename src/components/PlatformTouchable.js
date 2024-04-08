@@ -1,13 +1,13 @@
 import React from 'react';
 import { Platform, TouchableNativeFeedback, TouchableOpacity, View } from 'react-native';
 
-const PlatformTouchable = ({ children, style, ...props }) => {
+const PlatformTouchable = ({ children, ...props }) => {
     const Touchable = Platform.OS === "android" ? TouchableNativeFeedback : TouchableOpacity;
 
     return (
 
-        <Touchable {...this.props}>
-            <View style={style}>{children}</View>
+        <Touchable {...props}>
+            <View style={props.style}>{children}</View>
         </Touchable>)
 
 };
