@@ -1,20 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
 
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
+import AppButton from './src/components/AppButton';
+
 
 
 
@@ -22,11 +14,19 @@ import {
 function App(): React.JSX.Element {
 
   return (
-    <Text >
-      tests
-    </Text>
+    <View style={styles.container}>
+      <AppButton title="Done"/>
+    </View>
   );
 }
+
+const styles=StyleSheet.create({
+  container:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center'
+  }
+})
 
 
 export default App;
