@@ -9,6 +9,7 @@ import {
 import AppButton from './src/components/AppButton';
 import AddToCartButton from './src/components/AddToCartButton';
 import Timer from './src/components/Timer';
+import Box from './src/components/FlexBox';
 
 function App(): React.JSX.Element {
   const isLoading = true
@@ -21,25 +22,21 @@ function App(): React.JSX.Element {
     setCounter(counter - 1)
   }
   return (
-    <View style={styles.container}>
+     <View style={{ flex: 1, flexDirection: "column", justifyContent: "space-between", alignItems: "center", marginTop: 150, marginBottom: 150 }}>
       {/* <AppButton isLoading={isLoading} onPress={() => alert("Say Hi")} title="Done" /> */}
       {/* <Button title='Increment' onPress={OnIncrement}/>
       <Text>{counter}</Text>
       <Button title='Decrment' onPress={OnDecrment}/> */}
       {/* <AddToCartButton/> */}
       {/* <Timer /> */}
-
+      <Box color="blue" />
+      <Box color="green" />
+      <Box color="yellow" />
+      <Box color="red" />
+      <Box color="orange" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
 
 
 export default App;
